@@ -1,0 +1,77 @@
+{
+  "author": "Artur Allamyradov",
+  "name": "learnJS",
+  "version": "1.0.0",
+  "description": "learnJS",
+  "homepage": "",
+  "browserslist": [
+    "last 2 versions",
+    "> 5%"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "choices.js": "^10.2.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "eslint": "^8.17.0",
+    "html-webpack-plugin": "^5.5.0",
+    "inputmask": "^5.0.7",
+    "jquery": "^3.7.0",
+    "lozad": "^1.16.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.1",
+    "prettier": "^2.6.2",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.52.2",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^13.0.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo": "^2.8.0",
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "engines": {
+    "node": "^12 || >=14"
+  },
+  "keywords": [
+    "webpack",
+    "boilerplate",
+    "template",
+    "setup"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack --mode production && prettier --print-width=120 --parser html --write dist/*.html",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack serve --mode=development --env development --open"
+  },
+  "target": "web",
+  "dependencies": {
+    "compression-webpack-plugin": "^10.0.0",
+    "cssnano-webpack-plugin": "^1.0.3",
+    "gsap": "^3.11.5",
+    "html-loader": "^3.1.0",
+    "ion-rangeslider": "^2.3.1",
+    "jquery-ui": "^1.13.2",
+    "jquery-ui-dist": "^1.13.2",
+    "parallax-js": "^3.1.0",
+    "preload-webpack-plugin": "^2.3.0",
+    "qs": "^6.11.1",
+    "sharer.js": "^0.5.1",
+    "skrollr": "^0.6.26",
+    "swiper": "^8.1.6",
+    "tippy.js": "^6.3.7",
+    "webpack-livereload-plugin": "^3.0.2"
+  }
+}
