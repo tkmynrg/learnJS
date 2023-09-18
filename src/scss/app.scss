@@ -1,51 +1,77 @@
 body {
-  margin: 0;
-  padding: 0;
+  padding: 16px;
+  color: #000;
 }
 
-#colorContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-#hexCode {
-  display: none;
-  font-size: 18px;
-  position: absolute;
-  z-index: 1;
+.random-form {
+  border: 1px solid #000;
+  border-radius: 10px;
   left: 50%;
-  margin-top: 30px;
-  transform: translate3d(-50%,0,0);
-  margin-left: 10px;
-  margin-right: 10px;
-  width: max-content;
-  cursor: pointer;
-  padding: 5px 20px 8px 20px;
-  background: rgba(0,0,0,0.13);
-  color: #ffffff;
-  -webkit-tap-highlight-color: transparent;
-  text-decoration: none;
-  border-radius: 4px;
+  padding: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .random-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 80px);
+    margin-bottom: 20px;
+
+    .random__result {
+      font-size: 48px;
+    }
+
+    .random__inputs {
+      .input {
+        padding-bottom: 15px;
+
+        .input__title {
+          padding-bottom: 15px
+        }
+
+        .input__value {
+          border-style: none;
+          border-bottom: 3px solid #5f6368;
+
+          &:focus {
+            border-style: none;
+            border-bottom: 3px solid #0950a7;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  .button {
+    background-color: #5f6368;
+    color: white;
+    padding: 15px 40px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 1s ease;
+
+    &:hover {
+      background-color: #0950a7;
+    }
+  }
 }
 
-#generateButton {
-  background-image: url(../img/refresh.svg);
-  background-color: rgba(0,0,0,0.06);
-  background-size: 66px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: calc(50% - 50px);
-  top: calc(50% - 50px);
-  transition: all .2s ease-in-out;
-  display: block;
-  height: 100px;
-  width: 100px;
-  border-radius: 50px;
-  cursor: pointer;
-  text-align: center;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
