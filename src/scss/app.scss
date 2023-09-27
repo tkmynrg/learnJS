@@ -1,0 +1,109 @@
+html {
+  background-color: #eff2f7;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: 0 auto;
+
+  .shortener {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .shortener__url-input {
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+
+    &.input__focused {
+      .text-input__box {
+        border: 1px solid #8694b066;
+      }
+    }
+
+    .text-input__content {
+      box-sizing: border-box;
+      display: flex;
+      position: relative;
+      vertical-align: top;
+      width: 100%;
+      z-index: 0;
+      margin-right: 16px;
+    }
+
+    .text-input__control {
+      background: none;
+      border: 0 solid transparent;
+      box-sizing: border-box;
+      color: gray;
+      margin: 0;
+      outline: 0;
+      padding: 20px;
+      position: relative;
+      vertical-align: top;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .text-input__box {
+      bottom: 0;
+      box-sizing: border-box;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .15s;
+      z-index: 1;
+      background-color: white;
+      border-radius: 15px;
+    }
+
+    button {
+      max-width: max-content;
+      width: auto;
+      border-radius: 16px;
+      font-size: 16px;
+      padding: 16px;
+      border: none;
+      display: block;
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      background-color: #ffdd57;
+      transition: background-color .15s;
+
+      &:hover {
+        background-color: #e3ba1b;
+      }
+
+      &.disabled {
+        background-color: #475a8080;
+        cursor: default;
+        outline: none;
+
+        .button__text {
+          user-select: none;
+        }
+      }
+
+      .button__text {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.text-input__control:hover + .text-input__box {
+  border: 1px solid #8694b066;
+}
