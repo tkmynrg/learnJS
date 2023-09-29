@@ -16,89 +16,137 @@ body {
   .shortener {
     width: 100%;
     margin-top: 16px;
-  }
 
-  .shortener__url-input {
-    align-items: flex-start;
-    display: flex;
-    width: 100%;
-
-    &.input__focused {
-      .text-input__box {
-        border: 1px solid #8694b066;
-      }
-    }
-
-    .text-input__content {
-      box-sizing: border-box;
+    .shortener__url-input {
+      align-items: flex-start;
       display: flex;
-      position: relative;
-      vertical-align: top;
       width: 100%;
-      z-index: 0;
-      margin-right: 16px;
-    }
 
-    .text-input__control {
-      background: none;
-      border: 0 solid transparent;
-      box-sizing: border-box;
-      color: gray;
-      margin: 0;
-      outline: 0;
-      padding: 20px;
-      position: relative;
-      vertical-align: top;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .text-input__box {
-      bottom: 0;
-      box-sizing: border-box;
-      height: auto;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: .15s;
-      z-index: 1;
-      background-color: white;
-      border-radius: 15px;
-    }
-
-    button {
-      max-width: max-content;
-      width: auto;
-      border-radius: 16px;
-      font-size: 16px;
-      padding: 16px;
-      border: none;
-      display: block;
-      position: relative;
-      outline: none;
-      cursor: pointer;
-      background-color: #ffdd57;
-      transition: background-color .15s;
-
-      &:hover {
-        background-color: #e3ba1b;
-      }
-
-      &.disabled {
-        background-color: #475a8080;
-        cursor: default;
-        outline: none;
-
-        .button__text {
-          user-select: none;
+      &.input__focused {
+        .text-input__box {
+          border: 1px solid #8694b066;
         }
       }
 
-      .button__text {
-        align-items: center;
+      .text-input__content {
+        box-sizing: border-box;
         display: flex;
-        justify-content: center;
+        position: relative;
+        vertical-align: top;
+        width: 100%;
+        z-index: 0;
+        margin-right: 16px;
+      }
+
+      .text-input__control {
+        background: none;
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        color: gray;
+        margin: 0;
+        outline: 0;
+        padding: 20px;
+        position: relative;
+        vertical-align: top;
+        width: 100%;
+        z-index: 2;
+      }
+
+      .text-input__box {
+        bottom: 0;
+        box-sizing: border-box;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .15s;
+        z-index: 1;
+        background-color: white;
+        border-radius: 15px;
+      }
+
+      button {
+        max-width: max-content;
+        width: auto;
+        border-radius: 16px;
+        font-size: 16px;
+        padding: 16px;
+        border: none;
+        display: block;
+        position: relative;
+        outline: none;
+        cursor: pointer;
+        background-color: #ffdd57;
+        transition: background-color .15s;
+
+        &:hover {
+          background-color: #e3ba1b;
+        }
+
+        &.disabled {
+          background-color: #475a8080;
+          cursor: default;
+          outline: none;
+
+          .button__text {
+            user-select: none;
+          }
+        }
+
+        .button__text {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .shortener__card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-sizing: border-box;
+      padding: 20px;
+      margin-top: 15px;
+      animation: hide-card .3s ease-in forwards;
+      overflow-y: hidden;
+
+      &.visible {
+        animation: show-card .3s ease-in forwards;
+      }
+
+      .shortener__short-link-container {
+
+        .shortener__short-link {
+          border-radius: 2px;
+          cursor: pointer;
+          display: inline-block;
+          outline: none;
+          text-decoration: none;
+
+          .link__text {
+
+            .shortener__short-link-content {
+              display: flex;
+              align-items: center;
+              color: black;
+              transition: color .3s;
+
+              &:hover {
+                color: red;
+              }
+
+              svg {
+
+              }
+
+              .shortener__short-link-text {
+                margin-left: 8px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -106,4 +154,30 @@ body {
 
 .text-input__control:hover + .text-input__box {
   border: 1px solid #8694b066;
+}
+
+@keyframes show-card {
+  0% {
+    height: 0;
+    opacity: 0;
+    pointer-events: none
+  }
+
+  to {
+    height: 100%;
+    opacity: 1
+  }
+}
+
+@keyframes hide-card {
+  0% {
+    height: 100%;
+    opacity: 1
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+    pointer-events: none
+  }
 }
